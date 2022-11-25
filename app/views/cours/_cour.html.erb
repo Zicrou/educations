@@ -1,0 +1,17 @@
+<div id="<%= dom_id cour %>">
+  <p>
+    <strong>Title:</strong>
+    <%= cour.title %>
+  </p>
+
+  <p>
+    <strong>Posted:</strong>
+    <%= time_tag cour.created_at, "data-local": "time-ago" %>
+  </p>
+
+  <p>
+    <strong>Content:</strong>
+    <%= cour.content %>
+  </p>
+
+</div>
