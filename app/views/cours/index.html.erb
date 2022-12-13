@@ -4,7 +4,9 @@
         <%#= link_to "Show this cour", cour %>
     </p-->
 <% #end %>
-<p style="color: green"><%= notice %></p>
+<% #if notice %>
+    <!-- p style="color: green"><%#= notice %></p -->
+<% #end %>
 
 <h1><%= link_to "Ajouter un cours", new_cour_path %></h1>
 

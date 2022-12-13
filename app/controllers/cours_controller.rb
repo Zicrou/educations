@@ -8,6 +8,9 @@ class CoursController < ApplicationController
 
   # GET /cours/1 or /cours/1.json
   def show
+    if !user_signed_in?
+      redirect_to root_path, notice: "Vous devez vous connecté."
+    end
   end
 
   # GET /cours/new
