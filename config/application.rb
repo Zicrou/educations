@@ -25,5 +25,11 @@ module Education
     ActiveStorage::Analyzer::ImageAnalyzer::ImageMagick,
     ActiveStorage::Analyzer::VideoAnalyzer,
     ActiveStorage::Analyzer::AudioAnalyzer]
+
+    config.active_storage.previewers = 
+    [ActiveStorage::Previewer::PopplerPDFPreviewer,
+    ActiveStorage::Previewer::MuPDFPreviewer,
+    ActiveStorage::Previewer::VideoPreviewer]
+
   end
 end

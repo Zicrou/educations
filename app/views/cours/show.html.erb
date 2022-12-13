@@ -1,10 +1,14 @@
-<p style="color: green"><%= notice %></p>
+<div class="container-xxl py-5">
+  <div class="container">
+    <p style="color: green"><%= notice %></p>
 
-<%= render @cour %>
+    <%= render @cour %>
 
-<div>
-  <%= link_to "Edit this cour", edit_cour_path(@cour) %> |
-  <%= link_to "Back to cours", cours_path %>
+    <div>
+      <%= link_to "Edit this cour", edit_cour_path(@cour) %> |
+      <%= link_to "Back to cours", cours_path %>
 
-  <%= button_to "Destroy this cour", @cour, method: :delete %>
+      <%= button_to "Destroy this cour", @cour, method: :delete %>
+    </div>
+  </div>
 </div>
