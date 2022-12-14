@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :formations
   #devise_for :users
   devise_for :users, path: 'auth',
    path_names: {

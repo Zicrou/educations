@@ -1,0 +1,18 @@
+<div class="container-xxl py-5">
+  <div class="container">
+    <p style="color: green"><%= notice %></p>
+
+      <h1>Formations</h1>
+
+      <div id="formations">
+        <% @formations.each do |formation| %>
+          <%= render formation %>
+          <p>
+            <%= link_to "Show this formation", formation %>
+          </p>
+        <% end %>
+      </div>
+
+      <%= link_to "New formation", new_formation_path %>
+  </div>
+</div>

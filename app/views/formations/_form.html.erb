@@ -1,0 +1,23 @@
+<%= form_with(model: formation) do |form| %>
+  <% if formation.errors.any? %>
+    <div class="alert alert-danger" style="color: red">
+      <h2><%= pluralize(formation.errors.count, "error") %> prohibited this formation from being saved:</h2>
+
+      <ul>
+        <% formation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group col-md-4">
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title, class:"form-control" %>
+  </div>
+  <br>
+
+  <div class="form-group">
+    <%= form.submit class:"btn btn-primary" %>
+  </div>
+<% end %>

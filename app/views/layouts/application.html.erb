@@ -36,15 +36,26 @@
   </head>
 
   <body>
-  <%= render "layouts/shared/header" %>
-  <% if notice %>
+    <%= render "layouts/shared/header" %>
     <br>
     <br>
     <br>
-    <p class="notice btn btn-outline-warning"><%= notice %></p>
-  <% end %>
-    <p class="alert"><%= alert %></p>
-      <%= yield %>
+
+    <% if notice  %>
+      <div class="alert alert-success" role="alert">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+
+    <% if alert  %>
+      <div class="alert alert-danger" role="alert">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end  %>
+    
+    <%= yield %>
+
     <%= render "layouts/shared/footer" %>
+
   </body>
 </html>
