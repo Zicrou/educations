@@ -1,4 +1,16 @@
 <div id="<%= dom_id cour %>">
+  <% if cour.thumbnail.attached? %>
+    <p>
+      <strong>Miniature:</strong>
+      <%= image_tag cour.thumbnail.variant(:thumb) %>
+    </p>
+  <% end %>
+
+  <p>
+    <strong>Video:</strong>
+    <%= video_tag url_for(cour.video), controls: true %>
+  </p>
+
   <p>
     <strong>Title:</strong>
     <%= cour.title %>

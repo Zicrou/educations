@@ -1,5 +1,5 @@
 class CoursController < ApplicationController
-  before_action :set_cour, only: %i[ show edit update destroy ]
+  before_action :set_cour, only: %i[show edit update destroy]
 
   # GET /cours or /cours.json
   def index
@@ -28,7 +28,9 @@ class CoursController < ApplicationController
 
     respond_to do |format|
       if @cour.save
-        format.html { redirect_to cour_url(@cour), notice: "Cour was successfully created." }
+        format.html do
+          redirect_to cour_url(@cour), notice: "Cour was successfully created."
+        end
         format.json { render :show, status: :created, location: @cour }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +43,9 @@ class CoursController < ApplicationController
   def update
     respond_to do |format|
       if @cour.update(cour_params)
-        format.html { redirect_to cour_url(@cour), notice: "Cour was successfully updated." }
+        format.html do
+          redirect_to cour_url(@cour), notice: "Cour was successfully updated."
+        end
         format.json { render :show, status: :ok, location: @cour }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -55,19 +59,22 @@ class CoursController < ApplicationController
     @cour.destroy
 
     respond_to do |format|
-      format.html { redirect_to cours_url, notice: "Cour was successfully destroyed." }
+      format.html do
+        redirect_to cours_url, notice: "Cour was successfully destroyed."
+      end
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_cour
-      @cour = Cour.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def cour_params
-      params.require(:cour).permit(:title, :content)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_cour
+    @cour = Cour.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def cour_params
+    params.require(:cour).permit(:title, :content, :thumbnail, :video)
+  end
 end

@@ -17,6 +17,18 @@
   </div>
   <br>
 
+  <div class="form-group col-md-4">
+    <%= form.label :miniature, style: "display: block" %>
+    <%= form.file_field :thumbnail, class:"form-control" %>
+  </div>
+  <br>
+
+  <div class="form-group col-md-4">
+    <%= form.label :video, style: "display: block" %>
+    <%= form.file_field :video, class:"form-control" %>
+  </div>
+  <br>
+
   <div class="form-group">
     <%= form.label :content, style: "display: block;" %>
     <%= form.rich_text_area :content, class:"form-control" %>
