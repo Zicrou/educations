@@ -21,7 +21,11 @@
                     </div>
                     <%= link_to "Contact", "#", class:"nav-item nav-link" %>
             </div>
-            <a href="<%= new_user_session_path() %>" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Se Connecter<i class="fa fa-arrow-right ms-3"></i></a>
+            <% if !user_signed_in? %>
+                <a href="<%= new_user_session_path() %>" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Se Connecter<i class="fa fa-arrow-right ms-3"></i></a>
+            <% else %>
+                <%= link_to "Se Deconnecter", destroy_user_session_path, method: :delete, class:"btn btn-primary py-4 px-lg-5 d-none d-lg-block" %>
+            <% end %>
         </div>
     </nav>
     <!-- Navbar End -->
