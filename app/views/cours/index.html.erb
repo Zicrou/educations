@@ -5,9 +5,9 @@
     </p-->
 <% #end %>
     <p style="color: green"><%#= notice %></p>
-<% #if user_signed_in? %>
+<% if user_signed_in? %>
     <h1><%= link_to "Ajouter un cours", new_cour_path %></h1>
-<% #end %>
+<% end %>
 
 
     <!-- Header Start -->
