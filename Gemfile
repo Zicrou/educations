@@ -73,3 +73,4 @@ end
 gem "bootstrap", "~> 5.2", ">= 5.2.2"
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem "ruby-lsp", "~> 0.3.7", :group => :development
+gem "aws-sdk-s3", require: false

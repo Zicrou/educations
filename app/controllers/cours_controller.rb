@@ -25,7 +25,6 @@ class CoursController < ApplicationController
   # POST /cours or /cours.json
   def create
     @cour = Cour.new(cour_params)
-
     respond_to do |format|
       if @cour.save
         format.html do

@@ -5,7 +5,7 @@
     </div>
   <% else %>
     <p>
-      <%= image_tag cour.thumbnail.variant(:thumb) %>
+      <%= image_tag url_for(cour.thumbnail.variant(:thumb)) %>
     </p>
   <% end %>
   <br>
